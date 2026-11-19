@@ -124,11 +124,7 @@ STATIC_URL = 'static/'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+
 
 STATIC_URL = 'static/'
 
@@ -149,11 +145,15 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 
 # EMAIL CONFIGURATION
-MAILERS = {
-    "default": {
-        "BACKEND": "django.core.mail.backends.console.EmailBackend",
-    },
-}
 
-DEFAULT_FROM_EMAIL = "breakpointgaming@example.com"
-OWNER_EMAIL = os.getenv("OWNER_EMAIL")
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+OWNER_EMAIL = os.getenv('OWNER_EMAIL')

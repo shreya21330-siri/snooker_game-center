@@ -30,6 +30,14 @@ class EmployeeProfile(models.Model):
 # 2. CUSTOMERS
 class Customer(models.Model):
 
+    user = models.OneToOneField(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='customer_profile'
+    )
+
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
@@ -39,7 +47,6 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
-
 
 # 3. SNOOKER AND POOL TABLES
 class GamingTable(models.Model):
