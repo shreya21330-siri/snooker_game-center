@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Booking | BreakPoint Gaming</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #101820;
+            color: white;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #1c2935;
+            border-radius: 12px;
+        }
+
+        h1 {
+            color: #f5b942;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #455563;
+            border-radius: 6px;
+            background: #101820;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: #f5b942;
+            color: #101820;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffc95c;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #f5b942;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>New Gaming Booking</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Customer Name</label>
+        <input type="text" name="customer_name" required>
+
+        <label>Customer Phone</label>
+        <input type="tel" name="customer_phone" required>
+
+        <label>Customer Email</label>
+        <input type="email" name="customer_email" required>
+
+        <label>Game Type</label>
+        <select name="table_type" required>
+            <option value="">Select Game</option>
+            <option value="SNOOKER">Snooker</option>
+            <option value="POOL">Pool</option>
+        </select>
+
+        <label>Gaming Table</label>
+        <select name="gaming_table" required>
+    <option value="">Select Table</option>
+
+    {% for table in gaming_tables %}
+        <option value="{{ table.id }}">
+            {{ table.table_type }} - {{ table.table_number }}
+            (Rs. {{ table.hourly_rate }}/hour)
+        </option>
+    {% endfor %}
+</select>
+
+        <label>Booking Start Date and Time</label>
+        <input type="datetime-local" name="booking_date" required>
+
+        <label>Expected End Date and Time</label>
+        <input type="datetime-local" name="expected_end_time" required>
+
+        <label>Notes</label>
+        <textarea name="notes" rows="3"></textarea>
+
+        <button type="submit">Create Booking</button>
+    </form>
+
+    <a href="/" class="back">Back to Home</a>
+
+</div>
+
+</body>
+</html>

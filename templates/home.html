@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakPoint | Snooker & Pool Gaming Center</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101713;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: #111b16;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e5bd65;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #e5bd65;
+        }
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background:
+                linear-gradient(90deg, #101713 10%, rgba(16,23,19,.75)),
+                url('https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827')
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: #e5bd65;
+        }
+
+        .hero p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #e5bd65;
+            color: #101713;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 75px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 15px;
+            color: #e5bd65;
+        }
+
+        .section-description {
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background: #1b2920;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+
+        .game-card h3 {
+            margin: 18px 0 10px;
+            color: #e5bd65;
+        }
+
+        .game-card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background: #1b2920;
+            padding: 30px 15px;
+            border-radius: 8px;
+        }
+
+        .feature h3 {
+            color: #e5bd65;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            background: #080e0a;
+            padding: 25px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        @media(max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">BREAKPOINT</div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="#games">Games</a>
+        <a href="#features">Features</a>
+        <a href="/login/">Staff Login</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>PLAY. COMPETE. <span>REPEAT.</span></h1>
+
+        <p>
+            Welcome to BreakPoint Snooker & Pool Gaming Center.
+            Experience exciting games, professional tables
+            and unforgettable moments with your friends.
+        </p>
+
+        <a href="/login/" class="btn">STAFF LOGIN</a>
+    </div>
+</div>
+
+<section id="games">
+    <h2 class="section-title">OUR GAMES</h2>
+    <p class="section-description">
+        Choose your game and enjoy the experience.
+    </p>
+
+    <div class="games">
+
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827"
+                 alt="Snooker table">
+
+            <h3>Snooker</h3>
+            <p>
+                Experience precision, strategy and skill
+                on our professional snooker tables.
+            </p>
+        </div>
+
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51"
+                 alt="Pool table">
+
+            <h3>Pool</h3>
+            <p>
+                Enjoy exciting pool matches with friends
+                and challenge your skills.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="features">
+    <h2 class="section-title">WHY BREAKPOINT?</h2>
+    <p class="section-description">
+        Everything you need for a great gaming experience.
+    </p>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>Premium Tables</h3>
+            <p>Quality snooker and pool tables.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Easy Booking</h3>
+            <p>Organized table reservation management.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Memberships</h3>
+            <p>Special membership plans for players.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Tournaments</h3>
+            <p>Compete and showcase your gaming skills.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 BreakPoint Snooker & Pool Gaming Center.
+    All Rights Reserved.
+</footer>
+
+</body>
+</html>
+
