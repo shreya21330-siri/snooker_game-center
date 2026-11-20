@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | BreakPoint</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101820;
+            color: white;
+        }
+
+        header {
+            background: #080d12;
+            padding: 22px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #d4af37;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .welcome {
+            padding: 50px 40px 25px;
+        }
+
+        .welcome h1 {
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 25px 40px;
+        }
+
+        .card {
+            background: #1d2935;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .card a {
+            display: inline-block;
+            background: #d4af37;
+            color: black;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>BREAKPOINT</h2>
+    <a href="/logout/">Logout</a>
+</header>
+
+<section class="welcome">
+    <h1>Welcome, {{ request.user.first_name }}!</h1>
+    <p>Welcome to your BreakPoint customer dashboard.</p>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h2>🎱 Book a Table</h2>
+        <p>Reserve your favourite snooker or pool table.</p>
+        <a href="/booking/">Book Now</a>
+    </div>
+
+    <div class="card">
+        <h2>📋 My Bookings</h2>
+        <p>View your upcoming and previous bookings.</p>
+        <a href="#">View Bookings</a>
+    </div>
+
+    <div class="card">
+        <h2>👤 My Profile</h2>
+        <p>View your customer account details.</p>
+        <a href="#">My Profile</a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 BreakPoint Gaming Center
+</footer>
+
+</body>
+</html>

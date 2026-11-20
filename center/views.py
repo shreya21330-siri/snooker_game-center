@@ -267,3 +267,8 @@ def customer_login(request):
             )
 
     return render(request, 'accounts/login.html')
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
